@@ -24,9 +24,9 @@ def get_comments():
     try:
         subreddit=reddit.subreddit('all')
         for comment in subreddit.stream.comments(skip_existing=False):
-            if comment.author == 'JustAnAlpacaBot':
+            if comment.author == 'StockAI':
                 continue
-            if 'alpaca' in comment.body.lower():
+            if 'stock' in comment.body.lower():
                     reply_alpaca(comment)
                     print(time.time())
     except KeyboardInterrupt:
@@ -47,10 +47,10 @@ def main(reddit):
         get_comments()
 
 if __name__ == "__main__":
-    reddit=praw.Reddit(client_id='your_client_id',
-                        client_secret='your_secret',
+    reddit=praw.Reddit(client_id='JzZV39LPHX0lLw',
+                        client_secret='gRMWKw0nmsdiCuNPSgL5yUWndI2XLg',
                         user_agent='Alpaca Facts by u/JustAnAlpacaBot',
                         username='JustAnAlpacaBot',
-                        password='my_password')
+                        password='mohit1234')
     
     main(reddit)
